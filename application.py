@@ -10,10 +10,10 @@ from tqdm import tqdm
 from scipy import sparse
 tqdm.pandas(desc="progress-bar")
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
-@app.route('/', methods=['POST','GET'])
+@application.route('/', methods=['POST','GET'])
 def home():
 
     if request.method == 'POST':
@@ -38,7 +38,7 @@ def home():
                            prediction="No predictions yet! Enter an article!")
 
 
-@app.route('/results', methods=['POST', 'GET'])
+@application.route('/results', methods=['POST', 'GET'])
 def predict():
 
     if request.method == 'POST':
